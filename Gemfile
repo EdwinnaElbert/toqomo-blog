@@ -35,7 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.3'
 gem 'devise-i18n'
 gem 'slim-rails'
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
