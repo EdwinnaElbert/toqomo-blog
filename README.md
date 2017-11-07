@@ -1,4 +1,4 @@
-# README
+# Toqomo test task
 
 * Ruby version -- 2.4.1
 
@@ -17,8 +17,6 @@
 * rake db:create
 
 * rake db:migrate
-
-* if you need to populate your development db with faked info for some reason, run rake db:populate
 
 # OTHER
 

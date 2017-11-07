@@ -71,10 +71,10 @@ class PostsController < ApplicationController
     end
 
     def owner?
-      current_user.id == @post.id
+      current_user.present? && current_user.id == @post.id
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :user_id)
+      params.require(:post).permit(:title, :image, :body, :user_id)
     end
 end

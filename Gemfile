@@ -37,6 +37,7 @@ gem 'devise-i18n'
 gem 'slim-rails'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
+gem 'carrierwave', '~> 1.2', '>= 1.2.1'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
