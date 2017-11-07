@@ -13,6 +13,8 @@ p
 
 = link_to t('.back', :default => t("helpers.links.back")), posts_path, :class => 'btn btn-default'
 '
-= link_to t('.edit', :default => t("helpers.links.edit")), edit_post_path(@post), :class => 'btn btn-default'
+- if current_user.present? && @post.user_id == current_user.id
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_post_path(@post), :class => 'btn btn-default'
 '
-= link_to t('.destroy', :default => t("helpers.links.destroy")), post_path(@post), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+- if current_user.present? && @post.user_id == current_user.id
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), post_path(@post), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
