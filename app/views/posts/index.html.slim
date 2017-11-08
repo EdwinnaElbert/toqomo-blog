@@ -1,28 +1,21 @@
 - model_class = Post
 .page-header
-  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
-table.table.table-striped
-  thead
-    tr
-      th= model_class.human_attribute_name(:id)
-      th= model_class.human_attribute_name(:title)
-      th= model_class.human_attribute_name(:body)
-      th= model_class.human_attribute_name(:created_at)
-      th=t '.actions', :default => t("helpers.actions")
-  tbody
-    - @posts.each do |post|
-      tr
-        td= link_to post.id, post_path(post)
-        td= post.title
-        td= post.body
-        td=l post.created_at
-        td
-          = link_to t('.show', :default => t("helpers.links.show")), post_path(post), :class => 'btn btn-default btn-xs'
-          '
-          - if current_user.present? && post.user_id == current_user.id
-            = link_to t('.edit', :default => t("helpers.links.edit")), edit_post_path(post), :class => 'btn btn-default btn-xs'
-          '
-          - if current_user.present? && post.user_id == current_user.id
-            = link_to t('.destroy', :default => t("helpers.links.destroy")), post_path(post), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
-- if current_user.present?
-  = link_to t('.new', :default => t("helpers.links.new")), new_post_path, :class => 'btn btn-primary'
+.container
+  .row
+    .col-md-1.bg-white
+    .col-md-10.bg-light
+      - @posts.each do |post|
+        h1 = post.title
+        .img
+          = link_to (image_tag post.image, width: '100%'), post_path(post)
+        br
+          p = post.body
+        br
+        = link_to t('.back', :default => t("helpers.links.back")), posts_path, :class => 'btn btn-light'
+        '
+        - if current_user.present? && post.user_id == current_user.id
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_post_path(post), :class => 'btn btn-light'
+        '
+        - if current_user.present? && post.user_id == current_user.id
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), post_path(post), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-dark'
+        hr

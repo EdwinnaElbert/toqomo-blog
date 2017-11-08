@@ -16,5 +16,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
               | Регистрация
         - else
           li.nav-item.active
+            = link_to new_post_path, class: "nav-link"
+              | Создать пост
+          li.nav-item.active
             = link_to destroy_user_session_path, class: "nav-link", method: :delete do
               | Выйти

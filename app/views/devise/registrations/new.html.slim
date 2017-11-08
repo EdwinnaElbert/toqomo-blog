@@ -8,7 +8,7 @@ br
           = f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control"
         .form-group
           = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation", class: "form-control"
-        = f.submit t('devise.registrations.new.sign_up'), class: "btn btn-primary block full-width m-b"
+        = f.submit t('devise.registrations.new.sign_up'), class: "btn btn-dark block full-width m-b"
 
         p
           = render "devise/shared/links"

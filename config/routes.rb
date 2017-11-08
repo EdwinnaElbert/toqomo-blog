@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :posts, only: [:index, :show]
+
+  devise_for :users
   root to: "posts#index"
-#   namespace :user do
-#     resources :posts, only: [:index, :show, :edit, :update, :destroy]
-#   end
+  # BLOGGERS AREA
   authenticated :user do
-    resources :posts #, as: :authenticated_root
+    resources :posts
   end
+
+  # GUEST AREA (this one should be lower than Bloggers area)
+  resources :posts, only: [:index, :show]
+
+  # LETTER OPENER
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
-  devise_for :users
+
 end
