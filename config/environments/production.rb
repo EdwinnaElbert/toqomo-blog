@@ -70,7 +70,6 @@ Rails.application.configure do
     domain: 'toqomo-blog.herokuapp.com',
     tls: true,
     enable_starttls_auto: true,
-    enable_starttls_auto: true,
     user_name: 'xenialBlogger@yandex.ru',
     password: 'xenialpwd',
     :openssl_verify_mode => 'none'
