@@ -67,11 +67,13 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.yandex.ru',
     port: 465,
-    ssl: false,
+    domain: 'toqomo-blog.herokuapp.com',
     tls: true,
     enable_starttls_auto: true,
+    enable_starttls_auto: true,
     user_name: 'xenialBlogger@yandex.ru',
-    password: 'xenialpwd'
+    password: 'xenialpwd',
+    :openssl_verify_mode => 'none'
   }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
