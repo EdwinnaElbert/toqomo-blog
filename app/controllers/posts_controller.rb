@@ -71,7 +71,7 @@ class PostsController < ApplicationController
     end
 
     def owner?
-      current_user.present? && current_user.id == @post.id
+      current_user.present? && current_user.id == @post.user_id
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
