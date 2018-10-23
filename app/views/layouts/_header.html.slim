@@ -10,14 +10,14 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
         - if current_user.nil?
           li.nav-item.active
             = link_to new_user_session_path, class: "nav-link"
-              | Войти
+              | Sign In
           li.nav-item
             = link_to new_user_registration_path, class: "nav-link"
-              | Регистрация
+              | Sign Up
         - else
           li.nav-item.active
             = link_to new_post_path, class: "nav-link"
-              | Создать пост
+              | Create Post
           li.nav-item.active
             = link_to destroy_user_session_path, class: "nav-link", method: :delete do
-              | Выйти
+              | Sign Out
